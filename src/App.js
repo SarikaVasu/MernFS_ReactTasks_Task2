@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Calculator from "./components/Calculator";
+
 
 function App() {
+  
+  const [currExp,setCurrExp] = useState("");
+  const [result,setResult] = useState(null);
+  const [history,setHistory] = useState([]);
+  const  [format,setFormat] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Calculator 
+        currExp = {currExp}
+        setCurrExp = {setCurrExp}
+        result = {result}
+        setResult = {setResult}
+        history = {history}
+        setHistory = {setHistory}
+        format = {format}
+        setFormat = {setFormat}/>
     </div>
   );
 }
